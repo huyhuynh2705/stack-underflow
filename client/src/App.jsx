@@ -8,6 +8,7 @@ import HomeUsers from './components/Home/HomeUsers/HomeUsers';
 import NewQuestion from './components/NewQuestion/NewQuestion';
 import Auth from './components/Auth/Auth';
 import QuestionDetail from './components/QuestionDetail/QuestionDetail';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
 	const user = JSON.parse(localStorage.getItem('profile'));
@@ -28,6 +29,7 @@ const App = () => {
 					<Route path='/questions/user/:userId' exact component={HomeQuestions} />
 					<Route path='/questions/:id' exact component={QuestionDetail} />
 					<Route path='/newquestion' exact component={NewQuestion} />
+					<Route component={NotFound} />
 				</Switch>
 			</CssBaseline>
 		</BrowserRouter>

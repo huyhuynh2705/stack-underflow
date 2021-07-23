@@ -25,6 +25,10 @@ app.use('/answers', answersRoute);
 app.use('/tags', tagsRoute);
 app.use('/users', usersRoute);
 
+app.get('/', (req, res) => {
+	res.status(200).json({ message: 'Hello World' });
+});
+
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 
