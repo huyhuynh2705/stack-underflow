@@ -4,6 +4,12 @@ export default makeStyles((theme) => ({
 	root: {
 		maxWidth: '1400px',
 	},
+	root2: {
+		marginLeft: theme.spacing(2),
+		[theme.breakpoints.down('xs')]: {
+			marginLeft: theme.spacing(0),
+		},
+	},
 	container: {
 		marginTop: theme.spacing(1),
 		marginBottom: theme.spacing(2),
@@ -17,8 +23,9 @@ export default makeStyles((theme) => ({
 		marginLeft: theme.spacing(2),
 		marginTop: theme.spacing(1),
 		[theme.breakpoints.down('xs')]: {
-			marginTop: theme.spacing(0),
+			marginTop: theme.spacing(1),
 			marginBottom: theme.spacing(1),
+			marginLeft: theme.spacing(1),
 			fontSize: '20px',
 		},
 	},

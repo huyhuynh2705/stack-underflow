@@ -18,16 +18,25 @@ export default makeStyles((theme) => ({
 		marginTop: theme.spacing(1),
 		[theme.breakpoints.down('xs')]: {
 			marginTop: theme.spacing(0),
-			marginBottom: theme.spacing(1),
+			marginBottom: theme.spacing(0),
+			marginLeft: theme.spacing(0),
+			paddingTop: theme.spacing(0.5),
 			fontSize: '20px',
 		},
 	},
 	button: {
 		marginBottom: theme.spacing(1),
+		[theme.breakpoints.down('xs')]: {
+			marginBottom: theme.spacing(0),
+		},
 	},
 	content: {
 		marginLeft: theme.spacing(2),
 		marginTop: theme.spacing(1),
+		[theme.breakpoints.down('xs')]: {
+			marginTop: theme.spacing(0),
+			marginLeft: theme.spacing(0),
+		},
 	},
 	hamburger: {
 		marginTop: theme.spacing(1),

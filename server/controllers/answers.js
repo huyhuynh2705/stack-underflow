@@ -77,10 +77,10 @@ export const deleteAnswer = async (req, res) => {
 		}
 		const answer = await AnswerModel.findById(id);
 
-		if (String(req.userId) !== String(question.creatorId)) {
+		if (String(req.userId) !== String(answer.creatorId)) {
 			return res.json({ message: 'Unauthenticated' });
 		}
-		const question = QuestionModel.findById(answer.questionId);
+		const question = await QuestionModel.findById(answer.questionId);
 		const index = question.answer.findIndex((id) => String(id) === String(answer._id));
 		if (index !== -1) {
 			question.answer = question.answer.filter((id) => String(id) !== String(answer._id));

@@ -48,3 +48,14 @@ export const deleteCommentAnswer = (id, comment) => async (dispatch) => {
 		console.log(error);
 	}
 };
+
+export const deleteAnswer = (id) => async (dispatch) => {
+	try {
+		dispatch({ type: 'START_LOADING' });
+		const { data } = await api.deleteAnswer(id);
+		dispatch({ type: 'DELETE_ANSWER', payload: data });
+		dispatch({ type: 'END_LOADING' });
+	} catch (error) {
+		console.log(error);
+	}
+};

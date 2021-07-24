@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 
-import { likeAnswer } from '../../../actions/answers';
+import { likeAnswer, deleteAnswer } from '../../../actions/answers';
 import Comments from '../../Comments/Comments';
 
 import useStyles from './styles';
@@ -24,7 +24,7 @@ const Answer = ({ answer }) => {
 
 	const handleDelete = (e) => {
 		e.preventDefault();
-		// dispatch(deleteQuestion(question?._id));
+		dispatch(deleteAnswer(answer?._id));
 	};
 
 	return (

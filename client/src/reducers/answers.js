@@ -9,6 +9,7 @@ const answerReducer = (state = { isLoading: true, answers: [] }, action) => {
 		case 'ADD_ANSWER':
 			return { ...state, answers: [...state.answers, action.payload] };
 		case 'LIKE':
+		case 'DELETE_ANSWER':
 		case 'COMMENT_ANSWER':
 		case 'DELETE_COMMENT_ANSWER':
 			return { ...state, answers: state.answers.map((answer) => (answer._id === action.payload._id ? action.payload : answer)) };

@@ -86,13 +86,13 @@ const Questions = () => {
 	return (
 		<div className={classes.root}>
 			<Grid container>
-				<Grid item xs={12} sm={4} md={6}>
+				<Grid item xs={12} sm={3} md={6}>
 					<div className={classes.buttonBack}>{searchQuery && <ButtonGoBack history={history} />}</div>
-					<Typography className={classes.title2} variant='subtitle1' gutterBottom>
-						{numberOfQuestions} questions
+					<Typography className={classes.title2} variant='subtitle1'>
+						{numberOfQuestions < 2 ? `${numberOfQuestions} question` : `${numberOfQuestions} questions`}
 					</Typography>
 				</Grid>
-				<Grid item xs={12} sm={8} md={6}>
+				<Grid item xs={12} sm={9} md={6}>
 					{!searchQuery && !tagName && (
 						<div className={classes.paper}>
 							<ToggleButtonGroup value={value} exclusive onChange={handleChange}>
@@ -112,6 +112,7 @@ const Questions = () => {
 					)}
 				</Grid>
 			</Grid>
+			<hr style={{ height: '0.5px', borderWidth: '0', color: '#C4C4C4', backgroundColor: '#C4C4C4' }} />
 			{isLoading ? (
 				<CircularProgress />
 			) : (

@@ -11,7 +11,7 @@ const HomeTags = () => {
 	const classes = useStyles();
 	return (
 		<Container maxWidth={false} className={classes.root}>
-			<Grid container spacing={1}>
+			<Grid container>
 				<Grid item xs={false} sm={3} md={2} lg={2}>
 					<div className={classes.sidebar}>
 						<SideBar location={3} />
@@ -27,7 +27,9 @@ const HomeTags = () => {
 								</Typography>
 							</Grid>
 						</Grid>
-						<Users />
+						<div className={classes.root2}>
+							<Users />
+						</div>
 					</div>
 				</Grid>
 			</Grid>

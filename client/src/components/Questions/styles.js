@@ -3,10 +3,16 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
 	root: {
 		paddingTop: theme.spacing(1),
+		[theme.breakpoints.down('xs')]: {
+			paddingTop: theme.spacing(0),
+		},
 	},
 	paper: {
 		display: 'flex',
 		justifyContent: 'flex-end',
+		[theme.breakpoints.down('xs')]: {
+			justifyContent: 'flex-start',
+		},
 	},
 	paper2: {
 		padding: '15px',
@@ -35,13 +41,17 @@ export default makeStyles((theme) => ({
 	},
 	title2: {
 		marginLeft: theme.spacing(2),
-		// marginTop: theme.spacing(1),
+		fontWeight: '500',
 		[theme.breakpoints.down('xs')]: {
 			marginTop: theme.spacing(0),
+			marginLeft: theme.spacing(0),
 			fontSize: '15px',
 		},
 	},
 	buttonBack: {
 		marginLeft: theme.spacing(2),
+		[theme.breakpoints.down('xs')]: {
+			marginLeft: theme.spacing(0),
+		},
 	},
 }));

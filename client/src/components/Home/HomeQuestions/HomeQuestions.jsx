@@ -23,7 +23,7 @@ const Home = () => {
 		if (tagName && !userId) {
 			return (
 				<Typography className={classes.title} variant='h5'>
-					Questions tagged [ {tagName} ]
+					Questions tagged [{tagName}]
 				</Typography>
 			);
 		} else if (!tagName && userId) {
@@ -44,7 +44,7 @@ const Home = () => {
 	useEffect(() => {
 		tagName && dispatch(getTag(tagName));
 		// eslint-disable-next-line
-	}, []);
+	}, [tagName]);
 
 	return (
 		<Container maxWidth={false} className={classes.root}>
@@ -58,10 +58,10 @@ const Home = () => {
 					<div className={classes.container}>
 						<Hamburger />
 						<Grid container>
-							<Grid item xs={6} sm={8} md={9}>
+							<Grid item xs={8} sm={8} md={9}>
 								{titleRender(tagName, userId)}
 							</Grid>
-							<Grid item xs={6} sm={4} md={3}>
+							<Grid item xs={4} sm={4} md={3}>
 								<div className={classes.button}>
 									<ButtonNewQuestion />
 								</div>

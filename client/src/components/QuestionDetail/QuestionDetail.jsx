@@ -39,6 +39,11 @@ const QuestionDetail = () => {
 		history.push('/');
 	};
 
+	const handleSearchTag = (tag) => {
+		// dispatch(fetchQuestionsBySearch({ tags: tag }, page));
+		history.push(`/questions/tagged/${tag}`);
+	};
+
 	useEffect(() => {
 		dispatch(getQuestion(id));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,7 +106,13 @@ const QuestionDetail = () => {
 						<div className={classes.content} dangerouslySetInnerHTML={{ __html: question?.content }}></div>
 						<div className={classes.tagholder}>
 							{question?.tags.map((tag) => (
-								<Button key={tag} className={classes.tags} variant='contained' disableElevation>{`#${tag}`}</Button>
+								<Button
+									key={tag}
+									className={classes.tags}
+									variant='contained'
+									disableElevation
+									onClick={() => handleSearchTag(tag)}
+								>{`#${tag}`}</Button>
 							))}
 						</div>
 

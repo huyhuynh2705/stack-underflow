@@ -8,5 +8,10 @@ export default makeStyles((theme) => ({
 			backgroundColor: '#4e94da',
 			color: '#FFFFFF',
 		},
+		[theme.breakpoints.down('xs')]: {
+			minWidth: '0px',
+			fontSize: '13px',
+			textTransform: 'none',
+		},
 	},
 }));

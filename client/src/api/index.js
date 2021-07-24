@@ -30,6 +30,7 @@ export const deleteQuestion = (id) => API.delete(`/questions/${id}/delete`);
 export const fetchAnswers = (id) => API.get(`/answers/getanswerof/${id}`);
 export const addAnswer = (id, form) => API.post(`/answers/addanswerto/${id}`, form);
 export const likeAnswer = (id) => API.patch(`/answers/${id}/like`);
+export const deleteAnswer = (id) => API.delete(`/answers/${id}`);
 export const commentAnswer = (id, comment) => API.patch(`/answers/${id}/comment`, comment);
 export const deleteCommentAnswer = (id, comment) => API.patch(`/answers/${id}/deletecomment`, comment);
 

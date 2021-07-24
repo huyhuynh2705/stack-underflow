@@ -25,7 +25,7 @@ const Users = () => {
 			<div className={classes.root}>
 				<Grid container spacing={1}>
 					{users?.map((user) => (
-						<Grid key={users.indexOf(user)} item xs={6} sm={6} md={4} lg={3}>
+						<Grid key={users.indexOf(user)} item xs={12} sm={6} md={4} lg={3}>
 							<User user={user}></User>
 						</Grid>
 					))}
