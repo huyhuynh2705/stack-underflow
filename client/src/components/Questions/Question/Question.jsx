@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Button, Grid, Grow } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
+import moment from 'moment';
 
 // import { fetchQuestionsBySearch } from '../../../actions/questions';
 
@@ -20,6 +21,7 @@ function convertToPlain(html) {
 const Question = ({ question }) => {
 	const classes = useStyles();
 	const history = useHistory();
+	let dateCreated = moment(question?.dateCreated);
 
 	const handleSearchTag = (tag) => {
 		// dispatch(fetchQuestionsBySearch({ tags: tag }, page));
@@ -58,7 +60,7 @@ const Question = ({ question }) => {
 									: convertToPlain(question?.content).slice(0, 200) + '...'}
 							</Typography>
 							<Grid container spacing={1}>
-								<Grid item xs={12} sm={8}>
+								<Grid item xs={12} sm={6} md={8}>
 									{question?.tags.map((tag) => (
 										<Button
 											key={tag}
@@ -69,9 +71,9 @@ const Question = ({ question }) => {
 										>{`#${tag}`}</Button>
 									))}
 								</Grid>
-								<Grid item xs={12} sm={4}>
+								<Grid item xs={12} sm={6} md={4}>
 									<Typography variant='body2' align='right'>
-										Created by: {question?.creator}
+										Created by: {question?.creator}, {dateCreated.fromNow()}
 									</Typography>
 								</Grid>
 							</Grid>

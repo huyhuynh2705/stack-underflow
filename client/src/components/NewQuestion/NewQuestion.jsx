@@ -115,15 +115,19 @@ const NewQuestion = () => {
 						<Typography className={classes.title} variant='h6'>
 							Body
 						</Typography>
-						<Typography variant='body2'>Include all the information someone would need to answer your question</Typography>
-						<SunEditor
-							required
-							setOptions={{
-								height: 200,
-								buttonList: buttonList.formatting,
-							}}
-							onChange={handleChangeContent}
-						/>
+						<Typography variant='body2' gutterBottom>
+							Include all the information someone would need to answer your question
+						</Typography>
+						<div className={classes.editor}>
+							<SunEditor
+								required
+								setOptions={{
+									height: 200,
+									buttonList: buttonList.complex,
+								}}
+								onChange={handleChangeContent}
+							/>
+						</div>
 						{errors?.bodyError !== '' && (
 							<Typography variant='caption' color='secondary'>
 								{errors?.bodyError}
@@ -139,7 +143,7 @@ const NewQuestion = () => {
 							name='tags'
 							size='small'
 							variant='outlined'
-							label='Ex: nodejs react (Hit Enter on each tag.)'
+							label='Ex: nodejs react'
 							fullWidth
 							value={form.tags}
 							onAdd={() => {}}

@@ -53,8 +53,8 @@ const Answer = ({ answer }) => {
 				<Grid item xs={10} sm={10} md={11}>
 					<div className={classes.content} dangerouslySetInnerHTML={{ __html: answer?.content }}></div>
 					<div className={classes.container}>
-						<Typography className={classes.title2} variant='body2' gutterBottom>
-							Created by: {answer?.creator}, at {dateCreated.format('LLLL')}
+						<Typography className={classes.title2} variant='caption' gutterBottom>
+							Created by: {answer?.creator}, {dateCreated.fromNow()}
 						</Typography>
 					</div>
 					<div className={classes.comment}>

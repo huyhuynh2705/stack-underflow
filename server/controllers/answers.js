@@ -8,7 +8,8 @@ export const addAnswer = async (req, res) => {
 	try {
 		const oldQuestion = await QuestionModel.findById(id);
 		if (!oldQuestion) return res.status(404).send(`No question with id: ${id}`);
-		const newAnswer = new AnswerModel({ ...answer, questionId: id });
+		const dateCreated = new Date().toISOString();
+		const newAnswer = new AnswerModel({ ...answer, questionId: id, dateCreated: dateCreated, dateUpdated: dateCreated });
 		oldQuestion.answer.push(newAnswer._id);
 		await QuestionModel.findByIdAndUpdate(id, oldQuestion, { new: true });
 		await newAnswer.save();

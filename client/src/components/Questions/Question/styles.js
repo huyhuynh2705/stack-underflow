@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
 	root: {
 		padding: '10px',
+		[theme.breakpoints.down('xs')]: {
+			padding: '0',
+		},
 	},
 	link: {
 		textDecoration: 'none',
@@ -10,7 +13,6 @@ export default makeStyles((theme) => ({
 	},
 	tags: {
 		marginRight: '10px',
-		marginBottom: '10px',
 		display: 'inline-block',
 		padding: '2px 10px',
 		minHeight: 0,

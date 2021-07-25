@@ -51,16 +51,14 @@ const QuestionDetail = () => {
 
 	return isLoading ? (
 		<div className={classes.root}>
-			<Container>
-				<Grid container>
-					<Grid item xs={6} sm={8} md={9}>
-						<ButtonGoBack history={history} />
-					</Grid>
-					<Grid item xs={6} sm={4} md={3}>
-						<ButtonNewQuestion />
-					</Grid>
+			<Grid container>
+				<Grid item xs={6} sm={8} md={9}>
+					<ButtonGoBack history={history} />
 				</Grid>
-			</Container>
+				<Grid item xs={6} sm={4} md={3}>
+					<ButtonNewQuestion />
+				</Grid>
+			</Grid>
 			<Paper className={classes.paper} elevation={6}>
 				<CircularProgress />
 			</Paper>
@@ -101,7 +99,7 @@ const QuestionDetail = () => {
 							{question?.title}
 						</Typography>
 						<Typography className={classes.title2} variant='body2' gutterBottom>
-							Created by: {question?.creator}, at {dateCreated.format('LLLL')}
+							Created by: {question?.creator}, {dateCreated.fromNow()}
 						</Typography>
 						<div className={classes.content} dangerouslySetInnerHTML={{ __html: question?.content }}></div>
 						<div className={classes.tagholder}>
