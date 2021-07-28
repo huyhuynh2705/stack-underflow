@@ -64,6 +64,15 @@ const Questions = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [value, location]);
 
+	useEffect(() => {
+		const noQuery = !tab && !searchQuery && !tagName && !userId;
+		if (noQuery) {
+			dispatch(fetchQuestions(page));
+			return;
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	const handleChange = (e, newValue) => {
 		e.preventDefault();
 		setValue(newValue);

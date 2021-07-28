@@ -30,7 +30,7 @@ const AddComment = ({ id }) => {
 				<Typography variant='h6'>Your answer</Typography>
 				<SunEditor
 					setOptions={{
-						buttonList: buttonList.formatting,
+						buttonList: buttonList.complex,
 					}}
 					onChange={handleChangeContent}
 				/>
