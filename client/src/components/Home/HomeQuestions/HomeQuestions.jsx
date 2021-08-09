@@ -9,6 +9,7 @@ import SideBar from '../../SideBar/SideBar';
 import Hamburger from '../../Hamburger/Hamburger';
 
 import { getTag } from '../../../actions/tags';
+import { fetchQuestions } from '../../actions/questions';
 
 import useStyles from './styles';
 
@@ -45,6 +46,11 @@ const Home = () => {
 		tagName && dispatch(getTag(tagName));
 		// eslint-disable-next-line
 	}, [tagName]);
+
+	useEffect(() => {
+		dispatch(fetchQuestions(1));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<Container maxWidth={false} className={classes.root}>
